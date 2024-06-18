@@ -1,0 +1,15 @@
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
+balanced_infantry\event_groups.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdlib.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+balanced_infantry\event_groups.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stddef.h
+balanced_infantry\event_groups.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+balanced_infantry\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+balanced_infantry\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="-1" JTAG_DRPre="-1" IP="" TargetDevice="unspecified" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ScriptFile Name="E:\newProject\Balanced_infantry\Robot\Debug\INS.jscope\unspecified" />
+            <ElfFile Name="E:\newProject\Balanced_infantry\MDK-ARM\Balanced_infantry\Balanced_infantry.axf" />
+            <DataFile Name="..\mf9025_speed_feedback_h2l.csv" />
+            <RawFile Name="..\mf9025_speed_feedback_h2l.csv" />
+            <Scope>
+                <Options TimeResolutionUs="200000" />
+            </Scope>
+            <Trigger>
+                <Options Level="450.000000" Symbol="mf_speed2" On="1" Auto="0" Rise="1" Fall="0" />
+            </Trigger>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="mf_speed1" Address="0x200005B4" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-4" YMaxSampled="4" YAvgSampled="0" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="400" IsAutoConfig="0" YResolution="1000" MaxValue="6700" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="mf_speed2" Address="0x200005B8" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-350" YMaxSampled="628" YAvgSampled="8" Offset="8" ShowInGraph="1" ACCoupling="0" YOffset="400" IsAutoConfig="0" YResolution="1000" MaxValue="-2147483648" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="mf_speed1_lpf" Address="0x200005BC" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="12" ShowInGraph="1" ACCoupling="0" YOffset="400" IsAutoConfig="0" YResolution="1000" MaxValue="-2147483648" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="mf_speed2_lpf" Address="0x200005C0" Type="float" TypeID="1" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="-313" YMaxSampled="577" YAvgSampled="8" Offset="16" ShowInGraph="1" ACCoupling="0" YOffset="400" IsAutoConfig="0" YResolution="1000" MaxValue="13200" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="chassis_speed" Address="0x200005C4" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="-1" YMaxSampled="1" YAvgSampled="0" Offset="20" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="2" MaxValue="-2147483648" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="chassis_speed_lpf" Address="0x200005C8" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="-1" YMaxSampled="1" YAvgSampled="0" Offset="24" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="2" MaxValue="-2147483648" File="..\Robot\Tasks\chassis_task.cpp" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>

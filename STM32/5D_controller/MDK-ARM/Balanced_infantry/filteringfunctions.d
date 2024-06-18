@@ -1,0 +1,17 @@
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Source\FilteringFunctions\FilteringFunctions.c
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Source\FilteringFunctions\arm_biquad_cascade_df1_32x64_init_q31.c
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/filtering_functions.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\arm_math_types.h
+balanced_infantry\filteringfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+balanced_infantry\filteringfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\ARMCC\Bin\..\include\math.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\ARMCC\Bin\..\include\float.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\ARMCC\Bin\..\include\limits.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\arm_math_memory.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/none.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/utils.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/support_functions.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/fast_math_functions.h
+balanced_infantry\filteringfunctions.o: D:\KEIL\ARM\PACK\ARM\CMSIS-DSP\1.10.1\Include\dsp/basic_math_functions.h
