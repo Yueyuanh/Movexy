@@ -91,7 +91,9 @@ void Task2code(void * pvParameters)
   while(1)
   {
     //键鼠操控
-    BLE_UART.sendData();
+    BLE_UART.sendKeyData();
+    //BLE_UART.sendMouseData();
+
     delay(10);
   }
 }

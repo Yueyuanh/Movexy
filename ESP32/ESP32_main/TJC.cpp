@@ -1,5 +1,6 @@
 #include "TJC.h"
 #include "uart.h"
+#include "BLE.h"
 #include <Arduino.h> 
 #include <HardwareSerial.h>
 #include "string.h"
@@ -8,6 +9,8 @@
 HardwareSerial Serial2TJC(2);
 Rev_data_t TJC_movexy_data;
 extern Rev_data_t receivedData;
+extern uint8_t BLE_Connected;
+
 
 int blue=1048;
 int red=63488;
@@ -114,7 +117,16 @@ bool TJC::sendData()
        sprintf(str, "movestate.j3.pco=%d\xff\xff\xff",red);
        Serial2TJC.print(str);
     }
-        
-    
+/*************************************************按键可视化显示***************************************************/
+    if(BLE_Connected)
+    {
+       sprintf(str, "main.bt2.val=%d\xff\xff\xff",1);
+       Serial2TJC.print(str);
+    }
+    else
+    {
+       sprintf(str, "main.bt2.val=%d\xff\xff\xff",0);
+       Serial2TJC.print(str);
+    }
   
 }

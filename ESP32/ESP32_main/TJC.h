@@ -11,6 +11,8 @@ typedef struct {
 class TJC
 {
   public:
+
+  
     void setup();
     bool receiveData();
     bool sendData();

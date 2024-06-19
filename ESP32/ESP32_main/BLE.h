@@ -11,10 +11,16 @@ typedef struct {
 class BLE
 {
   public:
+    uint8_t Connected;
+    uint8_t KeyboardConnected;
+    uint8_t MouseConnected;
+    
+
+  
     void setup();
     bool receiveData();
-    bool sendData();
-    
+    bool sendKeyData();
+    bool sendMouseData();
     void printData();
 };
 

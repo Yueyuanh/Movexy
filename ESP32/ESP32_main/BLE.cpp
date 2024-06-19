@@ -8,11 +8,11 @@
 
 
 BleKeyboard bleKeyboard("Movexy","Yyh",100);
-//BleMouse bleMouse("Movexy","Yyh",100);
+//BleMouse bleMouse;
 
 
 extern Rev_data_t receivedData;
-
+uint8_t BLE_Connected;
 
 void BLE::setup()
 {
@@ -20,14 +20,17 @@ void BLE::setup()
   //bleMouse.begin();
 }
 
-bool BLE::sendData()
+bool BLE::sendKeyData()
 {
+
+  
 // 检查键盘是否连接
   if(bleKeyboard.isConnected()) {
 
     //指示灯    
     digitalWrite(2,HIGH);
-   
+    BLE_Connected=1;
+    
     if(receivedData.F_button[0]){
       if(receivedData.end_positionX<50)
       {
@@ -63,20 +66,48 @@ bool BLE::sendData()
     }
 
 
-
-
-
-
-
-  
-
   }
-  else{digitalWrite(2,LOW);}
+  else
+  {
+    digitalWrite(2,LOW);
+    BLE_Connected=0;
+  }
 
 }
 
-
-
+//
+//bool BLE::sendMouseData()
+//{
+//
+//// 检查键盘是否连接
+//  if(bleKeyboard.isConnected()) {
+//   
+//    if(receivedData.F_button[0]){
+//      if(receivedData.yaw>10)
+//      {
+//        bleMouse.move(0,-(int)receivedData.yaw);
+//      }
+//      if(receivedData.yaw<-10)
+//      {
+//        bleMouse.move(0,-(int)receivedData.yaw);
+//      }
+//      if(receivedData.pitch>20)
+//      {
+//        bleMouse.move(-(int)receivedData.pitch,0);
+//      
+//      }
+//      if(receivedData.pitch<-20)
+//      {
+//        bleMouse.move(-(int)receivedData.pitch,0);
+//      }
+//      
+//    } 
+//
+//
+//  }
+//
+//  
+//  }
 
 
 static __inline void delay_clock(int ts)
