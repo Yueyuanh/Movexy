@@ -92,6 +92,7 @@ balanced_infantry\freertos.o: ../Robot/Application/struct_typedef.h
 balanced_infantry\freertos.o: ../Robot/Tasks/detect_task.h
 balanced_infantry\freertos.o: ../Robot/Tasks/moveit_task.h
 balanced_infantry\freertos.o: ../Robot/Application/can_receive.h
+balanced_infantry\freertos.o: ../Robot/Controller/pid.h
 balanced_infantry\freertos.o: ../Robot/Tasks/tjc_task.h
 balanced_infantry\freertos.o: ../Robot/Tasks/esp32_task.h
 balanced_infantry\freertos.o: ../Robot/Tasks/hipnuc_task.h

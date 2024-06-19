@@ -64,6 +64,7 @@ balanced_infantry\esp32_task.o: ../Robot/BSP/bsp_usart.h
 balanced_infantry\esp32_task.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdio.h
 balanced_infantry\esp32_task.o: ..\Robot\Tasks\moveit_task.h
 balanced_infantry\esp32_task.o: ../Robot/Application/can_receive.h
+balanced_infantry\esp32_task.o: ../Robot/Controller/pid.h
 balanced_infantry\esp32_task.o: ..\Robot\Tasks\hipnuc_task.h
 balanced_infantry\esp32_task.o: ../Robot/Application/hipnuc.h
 balanced_infantry\esp32_task.o: D:\KEIL\ARM\ARMCC\Bin\..\include\string.h

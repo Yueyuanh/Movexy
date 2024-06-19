@@ -2,7 +2,7 @@
 #include "cmsis_os.h"
 #include "GPIO.h"
 #include "VMC.h"
-
+#include "arm_math.h"
 
 moveit_t movexy;
 extern VMC_t VMC_LEG_R;
@@ -23,8 +23,13 @@ moveit_t::moveit_t()
 	//初始化
 	init_flag=0;
 	init_count=0;
-}
 
+	//VMC初始化
+	VMC_init();
+	end_L_set=60;
+	end_Tp_set=pi/2;
+
+}
 
 /**
 	* @brief          运动初始化
@@ -67,6 +72,8 @@ void moveit_task(void const * argument)
 		
 		//数据更新
 		movexy.moveit_update();
+		movexy.moveit_mode_set();
+		movexy.moveit_control();
 
 		CAN_cmd_chassis(movexy.motor_send_current[0],movexy.motor_send_current[1],0,0);
 		vTaskDelay(2);
@@ -118,6 +125,51 @@ void moveit_t::moveit_update()
 
 
 }
+
+
+
+/**
+  * @brief          模式设置
+  * @param[in]      NULL
+  * @retval         NULL
+  */
+
+void moveit_t::moveit_mode_set()
+{
+	if(movexy.buttons.Two_down) control_mode=0;
+	else                        control_mode=1;
+}
+
+/**
+  * @brief          位置控制
+  * @param[in]      NULL
+  * @retval         NULL
+  */
+void moveit_t::moveit_control()
+{
+	if(init_flag)
+	{
+		if(control_mode==1)
+		{
+			VMC_calc(end_L_set,end_Tp_set,0,0);
+			movexy.motor_send_current[0]=-VMC_LEG_R.T[0];
+			movexy.motor_send_current[1]= VMC_LEG_R.T[1];
+		}
+		else
+		{
+			movexy.motor_send_current[0]=0;
+			movexy.motor_send_current[1]=0;
+		}
+	
+	}
+
+
+		LimitMax(movexy.motor_send_current[0],15000);
+		LimitMax(movexy.motor_send_current[1],15000);
+
+
+}
+
 
 
 /**

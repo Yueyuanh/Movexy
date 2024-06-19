@@ -4,10 +4,26 @@
 //include 
 #include "struct_typedef.h"
 #include "can_receive.h"
+#include "pid.h"
+
 
 //define 
 #define MOVEIT_TASK_INIT_TIME 3000
 #define PI 3.1415926f
+
+
+#define LimitMax(input, max)   \
+    {                          \
+        if (input > max)       \
+        {                      \
+            input = max;       \
+        }                      \
+        else if (input < -max) \
+        {                      \
+            input = -max;      \
+        }                      \
+    }	
+
 
 #ifdef __cplusplus
 extern "C"{
@@ -70,12 +86,16 @@ public:
 	button_data buttons;
 
 
-
+	
+	uint8_t control_mode;
+	fp32 end_L_set;
+	fp32 end_Tp_set;
 
 	moveit_t();
 	void moveit_init();
 	void moveit_update();
 	void moveit_mode_set();
+	void moveit_control();
 
 		
 };

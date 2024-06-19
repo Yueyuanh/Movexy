@@ -25,46 +25,34 @@ void VMC_init()
 
 /*********************************************************************************************************/
 		//stand
-    const fp32 F_PD_R[3]={50,0,1500};
-    const fp32 Tp_PD_R[3]={30,0,500};
+    const fp32 F_PD_R[3]= {2,0.001,100};
+    const fp32 Tp_PD_R[3]={20000,10,5000};
 
-    const fp32 F_PD_L[3]={50,0,1500};
-    const fp32 Tp_PD_L[3]={30,0,500};
-		
-		VMC_LEG_R.STAND_FEED=1.5;
-		VMC_LEG_L.STAND_FEED=1.5;
     
-		VMC_LEG_R.F_PD.init(PID_POSITION, F_PD_R, 20, 10);
-    VMC_LEG_R.Tp_PD.init(PID_POSITION,Tp_PD_R,20, 0);
-    VMC_LEG_L.F_PD.init(PID_POSITION, F_PD_L, 20, 10);
-    VMC_LEG_L.Tp_PD.init(PID_POSITION,Tp_PD_L,20, 0);
+		VMC_LEG_R.F_PD.init(PID_POSITION, F_PD_R, 120, 50);
+    VMC_LEG_R.Tp_PD.init(PID_POSITION,Tp_PD_R,6500, 4000);
+
 
 /*********************************************************************************************************/
 		//jump
 		const fp32 JUMP_F_PD_R[3]={400,0,100};
     const fp32 JUMP_Tp_PD_R[3]={30,0,500};
 
-    const fp32 JUMP_F_PD_L[3]={400,0,100};
-    const fp32 JUMP_Tp_PD_L[3]={30,0,500};
 
-		VMC_LEG_R.JUMP_FEED=0;
-		VMC_LEG_L.JUMP_FEED=0;
 
     VMC_LEG_R.JUMP_F_PD.init(PID_POSITION, JUMP_F_PD_R, 20, 10);
     VMC_LEG_R.JUMP_Tp_PD.init(PID_POSITION,JUMP_Tp_PD_R,20, 0);
-    VMC_LEG_L.JUMP_F_PD.init(PID_POSITION, JUMP_F_PD_L, 20, 10);
-    VMC_LEG_L.JUMP_Tp_PD.init(PID_POSITION,JUMP_Tp_PD_L,20, 0);
-
 }
 
 void VMC_calc(float Ld_R, float Ad_R, float Ld_L, float Ad_L)
 {
 
+		//期望位置
+		VMC_LEG_R.F=  VMC_LEG_R.F_PD.calc(VMC_LEG_R.L0-90,Ld_R);
+		VMC_LEG_R.Tp= VMC_LEG_R.Tp_PD.calc(VMC_LEG_R.Phi0,Ad_R);
+//		VMC_LEG_R.F=  Ld_R;
+//		VMC_LEG_R.Tp= Ad_R;
 
-    VMC_LEG_R.F = Ld_R;
-    VMC_LEG_R.Tp = Ad_R;
-    VMC_LEG_L.F = Ld_L;
-    VMC_LEG_L.Tp = Ad_L;
 
     //雅可比矩阵求解
     VMC_LEG_R.J[0][0] = LEG_1 * arm_sin_f32(VMC_LEG_R.Phi0 - VMC_LEG_R.Phi3) * arm_sin_f32(VMC_LEG_R.Phi1-VMC_LEG_R.Phi2) / arm_sin_f32(VMC_LEG_R.Phi3 - VMC_LEG_R.Phi2);
@@ -80,10 +68,6 @@ void VMC_calc(float Ld_R, float Ad_R, float Ld_L, float Ad_L)
     //计算关节电机输出扭矩
     VMC_LEG_R.T[0]=VMC_LEG_R.J[0][0]*VMC_LEG_R.F+VMC_LEG_R.J[0][1]*VMC_LEG_R.Tp;
     VMC_LEG_R.T[1]=VMC_LEG_R.J[1][0]*VMC_LEG_R.F+VMC_LEG_R.J[1][1]*VMC_LEG_R.Tp;
-
-    VMC_LEG_L.T[0]=VMC_LEG_L.J[0][0]*VMC_LEG_L.F+VMC_LEG_L.J[0][1]*VMC_LEG_L.Tp;
-    VMC_LEG_L.T[1]=VMC_LEG_L.J[1][0]*VMC_LEG_L.F+VMC_LEG_L.J[1][1]*VMC_LEG_L.Tp;
-
 
 }
 

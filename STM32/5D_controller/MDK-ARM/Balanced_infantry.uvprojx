@@ -893,14 +893,14 @@
           <GroupName>App</GroupName>
           <Files>
             <File>
-              <FileName>CAN_receive.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Robot\Application\CAN_receive.c</FilePath>
-            </File>
-            <File>
               <FileName>VMC.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Robot\Application\VMC.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>CAN_receive.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Robot\Application\CAN_receive.c</FilePath>
             </File>
             <File>
               <FileName>hipnuc_dec.c</FileName>

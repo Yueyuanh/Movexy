@@ -1,6 +1,6 @@
 Dependencies for Project 'Balanced_infantry', Target 'Balanced_infantry': (DO NOT MODIFY !)
 F (startup_stm32f407xx.s)(0x666D565D)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ..\Core\Inc -I ../Core/Inc-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o balanced_infantry\startup_stm32f407xx.o --depend balanced_infantry\startup_stm32f407xx.d)
-F (../Core/Src/main.c)(0x666D6AA1)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\main.o --omf_browse balanced_infantry\main.crf --depend balanced_infantry\main.d)
+F (../Core/Src/main.c)(0x66730723)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\main.o --omf_browse balanced_infantry\main.crf --depend balanced_infantry\main.d)
 I (../Core/Inc/main.h)(0x666D565B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6617FC0B)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x666D565B)
@@ -214,8 +214,9 @@ I (../Robot/Tasks/monitor_task.h)(0x6507F416)
 I (../Robot/BSP/bsp_led.h)(0x64379EAE)
 I (../Robot/Application/struct_typedef.h)(0x62934254)
 I (../Robot/Tasks/detect_task.h)(0x64379EAE)
-I (../Robot/Tasks/moveit_task.h)(0x666EB842)
+I (../Robot/Tasks/moveit_task.h)(0x66730E0D)
 I (../Robot/Application/can_receive.h)(0x6529510D)
+I (../Robot/Controller/pid.h)(0x649ADEB1)
 I (../Robot/Tasks/tjc_task.h)(0x6507F416)
 I (../Robot/Tasks/esp32_task.h)(0x666F0D58)
 I (../Robot/Tasks/hipnuc_task.h)(0x666EB3F6)
@@ -3417,10 +3418,11 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6617FC0B)
-F (..\Robot\Tasks\moveit_task.cpp)(0x666EB1E0)(--cpp -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\moveit_task.o --omf_browse balanced_infantry\moveit_task.crf --depend balanced_infantry\moveit_task.d)
-I (..\Robot\Tasks\moveit_task.h)(0x666EB842)
+F (..\Robot\Tasks\moveit_task.cpp)(0x66731299)(--cpp -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\moveit_task.o --omf_browse balanced_infantry\moveit_task.crf --depend balanced_infantry\moveit_task.d)
+I (..\Robot\Tasks\moveit_task.h)(0x66730E0D)
 I (../Robot/Application/struct_typedef.h)(0x62934254)
 I (../Robot/Application/can_receive.h)(0x6529510D)
+I (../Robot/Controller/pid.h)(0x649ADEB1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x6617FC0D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x6617FC0D)
 I (D:\KEIL\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
@@ -3480,7 +3482,30 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6617FC0B)
 I (../Robot/Application/VMC.h)(0x666DA98F)
-I (../Robot/Controller/pid.h)(0x649ADEB1)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/arm_math_types.h)(0x6617FC0B)
+I (D:\KEIL\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (D:\KEIL\ARM\ARMCC\include\math.h)(0x647ADE5A)
+I (D:\KEIL\ARM\ARMCC\include\float.h)(0x599EDB3C)
+I (D:\KEIL\ARM\ARMCC\include\limits.h)(0x599EDB3A)
+I (../Drivers/CMSIS/DSP/Include/arm_math_memory.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/none.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/utils.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/basic_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/interpolation_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/bayes_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/statistics_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/fast_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/matrix_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/complex_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/controller_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/support_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/distance_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/svm_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/svm_defines.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/transform_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/filtering_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/quaternion_math_functions.h)(0x6617FC0B)
 F (..\Robot\Tasks\tjc_task.cpp)(0x666D4FFC)(--cpp -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\tjc_task.o --omf_browse balanced_infantry\tjc_task.crf --depend balanced_infantry\tjc_task.d)
 I (..\Robot\Tasks\tjc_task.h)(0x6507F416)
 I (../Robot/BSP/bsp_led.h)(0x64379EAE)
@@ -3549,8 +3574,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6617FC0B)
 I (../Robot/BSP/bsp_usart.h)(0x666E8C5F)
 I (D:\KEIL\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (..\Robot\Tasks\moveit_task.h)(0x666EB842)
+I (..\Robot\Tasks\moveit_task.h)(0x66730E0D)
 I (../Robot/Application/can_receive.h)(0x6529510D)
+I (../Robot/Controller/pid.h)(0x649ADEB1)
 I (..\Robot\Tasks\hipnuc_task.h)(0x666EB3F6)
 I (../Robot/Application/hipnuc.h)(0x666D15BD)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x599EDB3C)
@@ -3618,6 +3644,37 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6617FC0B)
+F (..\Robot\Application\VMC.cpp)(0x6673165F)(--cpp -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\vmc.o --omf_browse balanced_infantry\vmc.crf --depend balanced_infantry\vmc.d)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/arm_math_types.h)(0x6617FC0B)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6617FC0B)
+I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6617FC0B)
+I (D:\KEIL\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (D:\KEIL\ARM\ARMCC\include\math.h)(0x647ADE5A)
+I (D:\KEIL\ARM\ARMCC\include\float.h)(0x599EDB3C)
+I (D:\KEIL\ARM\ARMCC\include\limits.h)(0x599EDB3A)
+I (../Drivers/CMSIS/DSP/Include/arm_math_memory.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/none.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/utils.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/basic_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/interpolation_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/bayes_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/statistics_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/fast_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/matrix_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/complex_math_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/controller_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/support_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/distance_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/svm_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/svm_defines.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/transform_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/filtering_functions.h)(0x6617FC0B)
+I (../Drivers/CMSIS/DSP/Include/dsp/quaternion_math_functions.h)(0x6617FC0B)
+I (..\Robot\Application\VMC.h)(0x666DA98F)
+I (..\Robot\Application\struct_typedef.h)(0x62934254)
+I (../Robot/Controller/pid.h)(0x649ADEB1)
 F (..\Robot\Application\CAN_receive.c)(0x666D6A55)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\can_receive.o --omf_browse balanced_infantry\can_receive.crf --depend balanced_infantry\can_receive.d)
 I (..\Robot\Application\CAN_receive.h)(0x6529510D)
 I (..\Robot\Application\struct_typedef.h)(0x62934254)
@@ -3665,37 +3722,6 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x6617FC0B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x6617FC0B)
 I (D:\KEIL\ARM\ARMCC\include\string.h)(0x599EDB3C)
-F (..\Robot\Application\VMC.cpp)(0x666DAB4C)(--cpp -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\vmc.o --omf_browse balanced_infantry\vmc.crf --depend balanced_infantry\vmc.d)
-I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/arm_math_types.h)(0x6617FC0B)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6617FC0B)
-I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6617FC0B)
-I (D:\KEIL\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (D:\KEIL\ARM\ARMCC\include\math.h)(0x647ADE5A)
-I (D:\KEIL\ARM\ARMCC\include\float.h)(0x599EDB3C)
-I (D:\KEIL\ARM\ARMCC\include\limits.h)(0x599EDB3A)
-I (../Drivers/CMSIS/DSP/Include/arm_math_memory.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/none.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/utils.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/basic_math_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/interpolation_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/bayes_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/statistics_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/fast_math_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/matrix_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/complex_math_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/controller_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/support_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/distance_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/svm_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/svm_defines.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/transform_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/filtering_functions.h)(0x6617FC0B)
-I (../Drivers/CMSIS/DSP/Include/dsp/quaternion_math_functions.h)(0x6617FC0B)
-I (..\Robot\Application\VMC.h)(0x666DA98F)
-I (..\Robot\Application\struct_typedef.h)(0x62934254)
-I (../Robot/Controller/pid.h)(0x649ADEB1)
 F (..\Robot\Application\hipnuc_dec.c)(0x666E83CF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP -I ../Drivers/CMSIS/DSP/Include -I ../Robot/Components -I ../Robot/Components/Algorithm/Include -I ../Robot/Components/Algorithm -I ../Robot/Components/Controller -I ../Robot/Components/Devices -I ../Robot/BSP -I ../Robot/Tasks -I ../Robot/Application -I ../Robot/Controller -I ../Robot/Config -I ..\Robot\Application-I.\RTE\_Balanced_infantry-ID:\KEIL\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\KEIL\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_LOOPUNROLL -DARM_MATH_CM4 -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM-o balanced_infantry\hipnuc_dec.o --omf_browse balanced_infantry\hipnuc_dec.crf --depend balanced_infantry\hipnuc_dec.d)
 I (..\Robot\Application\hipnuc.h)(0x666D15BD)
 I (D:\KEIL\ARM\ARMCC\include\stdint.h)(0x599EDB3E)

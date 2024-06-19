@@ -87,8 +87,8 @@
 "balanced_infantry\tjc_task.o"
 "balanced_infantry\esp32_task.o"
 "balanced_infantry\hipnuc_task.o"
-"balanced_infantry\can_receive.o"
 "balanced_infantry\vmc.o"
+"balanced_infantry\can_receive.o"
 "balanced_infantry\hipnuc_dec.o"
 --library_type=microlib --strict --scatter "Balanced_infantry\Balanced_infantry.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
