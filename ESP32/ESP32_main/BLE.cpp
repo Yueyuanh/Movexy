@@ -24,38 +24,54 @@ bool BLE::sendData()
 {
 // 检查键盘是否连接
   if(bleKeyboard.isConnected()) {
-    if(receivedData.F_button[0]){
+
+    //指示灯    
+    digitalWrite(2,HIGH);
    
+    if(receivedData.F_button[0]){
       if(receivedData.end_positionX<50)
       {
-        Serial.println("D");
-        bleKeyboard.print("d");
-        //bleMouse.move(0,1000);
-      
+        bleKeyboard.press('d');
       }
       if(receivedData.end_positionX>100)
       {
-         Serial.println("A");
-        bleKeyboard.print("a");
-     
+        bleKeyboard.press('a');
       }
       if(receivedData.end_positionY>80)
       {
-        Serial.println("S");
-        bleKeyboard.print("s");
+        bleKeyboard.press('s');
       
       }
       if(receivedData.end_positionY<40)
       {
-        Serial.println("W");
-        bleKeyboard.print("w");
-
+        bleKeyboard.press('w');
       }
+      
+    }
+    else if(receivedData.F_button[1])
+    {
+       bleKeyboard.press('e');
+    }    
+    else if(receivedData.F_button[2])
+    {
+       bleKeyboard.press('q');
+    }    
+    
+    else
+    {
+      bleKeyboard.releaseAll();
     }
 
 
-   bleKeyboard.release(1);
+
+
+
+
+
+  
+
   }
+  else{digitalWrite(2,LOW);}
 
 }
 
