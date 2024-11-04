@@ -8,26 +8,35 @@
 
 ## 结构设计
 
-<img src="./img/图片1.png" style="zoom:30%;" />
+<img src="./img/图片1.png" style="zoom:30%;"/>
 
 <center>图1 结构示意图</center>
+
+<br>
 
 <center>1-总开关；2-显示屏；3-Y轴铝型材支撑；4-X轴铝型材支撑；5-中心滑台；6-云台手托底座；7-按键手柄；8-Roll轴旋转电机；9-编码电机；10-五连杆机构；11-水平滑台</center>
 
 <center>
-<img src="./img/图片2.png" alt="img" style="zoom:30%;" /> 
+<img src="./img/图片2.png" alt="img" style="zoom:30%;"/>
 </center>
+
 
 <center>图2 底层结构示意图（下视图）</center>
 
+<br>
+
 <center>1-编码电机；2-主动杆；3-从动杆；4-法兰轴承；5-深沟球轴承；6-塞打螺栓</center>
 
-
 <center>
-<img src="./img/图片3.png" alt="img" style="zoom:10%;" /> 
+<img src="./img/图片3.png" alt="img" style="zoom:10%;"  /> 
 </center>
 
+
 <center>图3 三轴摇杆结构示意图</center>
+
+<br>
+
+
 
 <center>1-模拟按键；2-手柄握把；3-陀螺仪传感器；4-旋转电机；5-固定底座；6-Roll轴旋转电机；7-抱紧环；8-抱紧摇臂；9-支撑管；10-支撑架</center>
 
@@ -50,4 +59,4 @@
 
 [实验室大揭秘! 神秘设备究竟是什么?_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1snhEecEuS/?spm_id_from=333.999.0.0&vd_source=e80c8eeb96287959ad54c2ac2259ae65)
 
-@125yueyuanhanoo
+@125YueYuanhanoo
