@@ -1,6 +1,6 @@
 /**
   * @brief          ESP32端通讯
-  * @param[in]      NULL
+  * @author         YueYuanhaoo
   * @retval         NULL
   * 
   * x 0-152
@@ -12,10 +12,12 @@
 #include "uart.h"
 #include "TJC.h"
 #include "BLE.h"
+#include "upper_uart.h"
 
-UART STM_UART;
-TJC  TJC_UART;
-BLE  BLE_UART;
+UART  STM_UART;
+TJC   TJC_UART;
+BLE   BLE_UART;
+UPPER UPPER_UART ;
 
 //多线程
 TaskHandle_t Task1;
@@ -25,6 +27,8 @@ void Task2code(void * pvParameters);
 
 
 extern Rev_data_t receivedData;
+extern Send_upper_data_t send_upper_Data;
+
 
 void setup() {
 
@@ -66,7 +70,6 @@ void setup() {
 void Task1code( void * pvParameters)
 {
 
-  
   while(1)
   {
 
@@ -77,9 +80,13 @@ void Task1code( void * pvParameters)
 
     //串口屏通讯
     TJC_UART.sendData();
+
+    //上位机通信
+    //UPPER_UART.upper_data_update();
+    UPPER_UART.send_upper_data(receivedData);
     
     //任务1延时
-    delay(20);
+    delay(2);
   }
 }
 
@@ -90,22 +97,18 @@ void Task2code(void * pvParameters)
   
   while(1)
   {
-    //键鼠操控
-    BLE_UART.sendKeyData();
-    //BLE_UART.sendMouseData();
+    //蓝牙链接状态显示
+    BLE_UART.BleConntect();
+    
+    //键鼠操控数据
+    //BLE_UART.sendKeyData();
+    BLE_UART.sendMouseData();
 
+    //蓝牙接收数据
+    
     delay(10);
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 

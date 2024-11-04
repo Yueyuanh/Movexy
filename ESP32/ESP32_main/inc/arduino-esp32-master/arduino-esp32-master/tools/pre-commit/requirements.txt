@@ -1,2 +1,0 @@
-pre-commit==3.7.1
-docutils==0.21.2

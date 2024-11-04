@@ -1,0 +1,94 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : {},
+				"path" : "D:/STM32/arm_none_gcc/bin/arm-none-eabi-gcc.exe",
+				"version" : ""
+			},
+			"language" : "ASM",
+			"sourceFileExtensions" : 
+			[
+				"s",
+				"S",
+				"asm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/STM32/arm_none_gcc/lib/gcc/arm-none-eabi/9.2.1/include",
+						"D:/STM32/arm_none_gcc/lib/gcc/arm-none-eabi/9.2.1/include-fixed",
+						"D:/STM32/arm_none_gcc/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/STM32/arm_none_gcc/bin/arm-none-eabi-gcc.exe",
+				"version" : "9.2.1"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/STM32/arm_none_gcc/arm-none-eabi/include/c++/9.2.1",
+						"D:/STM32/arm_none_gcc/arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
+						"D:/STM32/arm_none_gcc/arm-none-eabi/include/c++/9.2.1/backward",
+						"D:/STM32/arm_none_gcc/lib/gcc/arm-none-eabi/9.2.1/include",
+						"D:/STM32/arm_none_gcc/lib/gcc/arm-none-eabi/9.2.1/include-fixed",
+						"D:/STM32/arm_none_gcc/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/STM32/arm_none_gcc/bin/arm-none-eabi-g++.exe",
+				"version" : "9.2.1"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

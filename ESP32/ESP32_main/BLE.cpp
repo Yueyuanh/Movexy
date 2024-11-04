@@ -2,112 +2,124 @@
 #include "uart.h"
 #include <Arduino.h> 
 #include <HardwareSerial.h>
-#include <BleKeyboard.h>
+//#include "BleCombo.h"
 #include <BleMouse.h>
-#include <WiFi.h>
 
-
-BleKeyboard bleKeyboard("Movexy","Yyh",100);
-//BleMouse bleMouse;
+BleMouse bleMouse;
 
 
 extern Rev_data_t receivedData;
 uint8_t BLE_Connected;
 
+
 void BLE::setup()
 {
-  bleKeyboard.begin();
-  //bleMouse.begin();
+//  Keyboard.begin();
+  bleMouse.begin();
 }
 
-bool BLE::sendKeyData()
+
+bool BLE::BleConntect()
 {
-
-  
-// 检查键盘是否连接
-  if(bleKeyboard.isConnected()) {
-
-    //指示灯    
-    digitalWrite(2,HIGH);
-    BLE_Connected=1;
-    
-    if(receivedData.F_button[0]){
-      if(receivedData.end_positionX<50)
-      {
-        bleKeyboard.press('d');
-      }
-      if(receivedData.end_positionX>100)
-      {
-        bleKeyboard.press('a');
-      }
-      if(receivedData.end_positionY>80)
-      {
-        bleKeyboard.press('s');
-      
-      }
-      if(receivedData.end_positionY<40)
-      {
-        bleKeyboard.press('w');
-      }
-      
+    if(bleMouse.isConnected())
+    {
+      //指示灯    
+      digitalWrite(2,HIGH);
+      BLE_Connected=1;
     }
-    else if(receivedData.F_button[1])
-    {
-       bleKeyboard.press('e');
-    }    
-    else if(receivedData.F_button[2])
-    {
-       bleKeyboard.press('q');
-    }    
-    
     else
     {
-      bleKeyboard.releaseAll();
+      digitalWrite(2,LOW);
+      BLE_Connected=0;
+    }
+}
+
+//bool BLE::sendKeyData()
+//{
+//
+//  
+//// 检查键盘是否连接
+//  if(Keyboard.isConnected()) {
+//
+//    if(receivedData.F_button[0]){
+//      if(receivedData.end_positionX<50)
+//      {
+//        Keyboard.press('d');
+//      }
+//      if(receivedData.end_positionX>100)
+//      {
+//        Keyboard.press('a');
+//      }
+//      if(receivedData.end_positionY>80)
+//      {
+//        Keyboard.press('s');
+//      
+//      }
+//      if(receivedData.end_positionY<40)
+//      {
+//        Keyboard.press('w');
+//      }
+//      
+//    }
+//    else if(receivedData.F_button[1])
+//    {
+//       Keyboard.press('e');
+//    }    
+//    else if(receivedData.F_button[2])
+//    {
+//       Keyboard.press('q');
+//    }    
+//    
+//    else
+//    {
+//      Keyboard.releaseAll();
+//    }
+//
+//
+//  }
+//
+//}
+
+bool BLE::sendMouseData()
+{
+
+// 检查蓝牙是否连接
+  if(bleMouse.isConnected()) 
+  {
+    if(receivedData.F_button[0])
+    {
+      if(receivedData.yaw>10)
+      {
+        bleMouse.move(-(int8_t)receivedData.yaw/10,0);
+      }
+      if(receivedData.yaw<-10)
+      {
+        bleMouse.move(-(int8_t)receivedData.yaw/10,0);
+      }
+      if(receivedData.pitch>20)
+      {
+        bleMouse.move(0,(int8_t)receivedData.pitch/10);
+      
+      }
+      if(receivedData.pitch<-20)
+      {
+        bleMouse.move(0,(int8_t)receivedData.pitch/10,0);
+      }
+      delay(5);
+    } 
+
+    else if(receivedData.F_button[1])
+    {
+       bleMouse.click(MOUSE_LEFT);
+       delay(50);
     }
 
 
   }
-  else
-  {
-    digitalWrite(2,LOW);
-    BLE_Connected=0;
+
+  
   }
 
-}
-
-//
-//bool BLE::sendMouseData()
-//{
-//
-//// 检查键盘是否连接
-//  if(bleKeyboard.isConnected()) {
-//   
-//    if(receivedData.F_button[0]){
-//      if(receivedData.yaw>10)
-//      {
-//        bleMouse.move(0,-(int)receivedData.yaw);
-//      }
-//      if(receivedData.yaw<-10)
-//      {
-//        bleMouse.move(0,-(int)receivedData.yaw);
-//      }
-//      if(receivedData.pitch>20)
-//      {
-//        bleMouse.move(-(int)receivedData.pitch,0);
-//      
-//      }
-//      if(receivedData.pitch<-20)
-//      {
-//        bleMouse.move(-(int)receivedData.pitch,0);
-//      }
-//      
-//    } 
-//
-//
-//  }
-//
-//  
-//  }
 
 
 static __inline void delay_clock(int ts)
