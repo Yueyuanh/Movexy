@@ -1,2 +1,0 @@
-VendorID=1209
-BaudRate=115200
